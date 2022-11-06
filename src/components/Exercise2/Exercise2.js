@@ -48,7 +48,10 @@ class Exercise2 extends Component {
     );
     let result =
       this.state.displayConversation == null ? (
-        <List contacts={contacts}></List>
+        <List
+          conversations={this.state.conversations}
+          contacts={contacts}
+        ></List>
       ) : (
         <Conversation></Conversation>
       );
