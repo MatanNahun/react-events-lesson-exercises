@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 
 class Conversation extends Component {
-  //should recieve the prop "convo"
+  back = () => {
+    this.props.back();
+  };
   render() {
     return (
       <div>
+        <button onClick={this.back}>Back</button>
         {this.props.convo.map((message, i) => (
-          <div>
+          <div key={i}>
             <span className="sender">
               {message.sender === "self" ? "Me" : this.props.messageTo}:{" "}
             </span>

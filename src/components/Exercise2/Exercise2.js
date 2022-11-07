@@ -48,6 +48,12 @@ class Exercise2 extends Component {
     });
   };
 
+  back = () => {
+    this.setState({
+      displayConversation: null,
+    });
+  };
+
   render() {
     let contacts = this.state.conversations.map(
       (coversation) => coversation.with
@@ -67,6 +73,7 @@ class Exercise2 extends Component {
         ></List>
       ) : (
         <Conversation
+          back={this.back}
           messageTo={conversationForConvo.with}
           convo={conversationForConvo.convo}
         ></Conversation>
