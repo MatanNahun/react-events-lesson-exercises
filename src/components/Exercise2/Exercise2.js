@@ -52,6 +52,12 @@ class Exercise2 extends Component {
     let contacts = this.state.conversations.map(
       (coversation) => coversation.with
     );
+    let conversationForConvo = this.state.conversations.find(
+      (coversation) => coversation["with"] === this.state.displayConversation
+    );
+    // let convo = conversationForConvo.convo;
+    console.log(conversationForConvo);
+    // let convo = conversationForConvo.convo;
     let result =
       this.state.displayConversation == null ? (
         <List
@@ -60,7 +66,10 @@ class Exercise2 extends Component {
           displayConvo={this.displayConvo}
         ></List>
       ) : (
-        <Conversation></Conversation>
+        <Conversation
+          messageTo={conversationForConvo.with}
+          convo={conversationForConvo.convo}
+        ></Conversation>
       );
     return result;
   }
