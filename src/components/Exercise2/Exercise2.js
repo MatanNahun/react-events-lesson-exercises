@@ -42,6 +42,12 @@ class Exercise2 extends Component {
     };
   }
 
+  displayConvo = (name) => {
+    this.setState({
+      displayConversation: name,
+    });
+  };
+
   render() {
     let contacts = this.state.conversations.map(
       (coversation) => coversation.with
@@ -51,6 +57,7 @@ class Exercise2 extends Component {
         <List
           conversations={this.state.conversations}
           contacts={contacts}
+          displayConvo={this.displayConvo}
         ></List>
       ) : (
         <Conversation></Conversation>

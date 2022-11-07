@@ -5,7 +5,11 @@ class List extends Component {
   //should recieve the prop "contact"
   render() {
     return this.props.contacts.map((contact) => (
-      <Contact contact={contact}></Contact>
+      <Contact
+        displayConversation={this.props.displayConversation}
+        contact={contact}
+        displayConvo={this.props.displayConvo}
+      ></Contact>
     ));
   }
 }
